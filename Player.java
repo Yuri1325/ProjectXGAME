@@ -8,9 +8,9 @@ public class Player extends JLabel {
         this.setVisible(true);
         this.setOpaque(true);
         this.setBackground(Color.blue);
-        this.setBounds(100, 100, 100, 100);
+        this.setBounds(100, 100, 50, 50);
         
-
+        
     }
 
 }

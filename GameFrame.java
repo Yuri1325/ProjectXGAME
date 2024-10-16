@@ -9,7 +9,8 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame implements KeyListener
  {
     ImageIcon image1;
-   
+
+    TextThingy txtPnl;
     Player playerCharacter;
     int playerVelocity;
 
@@ -25,9 +26,8 @@ public class GameFrame extends JFrame implements KeyListener
         playerCharacter = new Player();
         this.add(playerCharacter);
         this.addKeyListener(this);
+        txtPnl = new TextThingy();
         
-        
-
         
         
         
@@ -35,46 +35,21 @@ public class GameFrame extends JFrame implements KeyListener
     }
     @Override
     public void keyTyped(KeyEvent e) {
-        switch (e.getKeyChar()){
-            case 'a':
+        if(e.getKeyChar()=='a'){
             playerVelocity++;
             playerCharacter.setLocation(playerCharacter.getX()-playerVelocity, playerCharacter.getY());
-
-            break;
-            case 'd':
+        }else if(e.getKeyChar()=='d'){
             playerVelocity++;
             playerCharacter.setLocation(playerCharacter.getX()+playerVelocity, playerCharacter.getY());
-            break;
-            case 'w':
+        }else if(e.getKeyChar()=='w'){
             playerVelocity++;
             playerCharacter.setLocation(playerCharacter.getX(), playerCharacter.getY()-playerVelocity);
-            break;
-            case 's':
+        }else if(e.getKeyChar()=='s'){
             playerVelocity++;
             playerCharacter.setLocation(playerCharacter.getX(), playerCharacter.getY()+playerVelocity);
-            break;
-            
         }
-        if(e.getKeyChar()=='a'){
 
-        }
-        if (e.getKeyChar()==('a')&&(e.getKeyChar()==('w'))){
-            playerVelocity++;
-            playerCharacter.setLocation(playerCharacter.getX()-playerVelocity, playerCharacter.getY()-playerVelocity);
-            
-        }
-        if (e.getKeyChar()==('a')&&(e.getKeyChar()==('s'))){
-            playerVelocity++;
-            playerCharacter.setLocation(playerCharacter.getX()-playerVelocity, playerCharacter.getY()+playerVelocity);
-        }
-        if (e.getKeyChar()==('d')&&(e.getKeyChar()==('w'))){
-            playerVelocity++;
-            playerCharacter.setLocation(playerCharacter.getX()+playerVelocity, playerCharacter.getY()-playerVelocity);
-        }
-        if (e.getKeyChar()==('d')&&(e.getKeyChar()==('s'))){
-            playerVelocity++;
-            playerCharacter.setLocation(playerCharacter.getX()+playerVelocity, playerCharacter.getY()+playerVelocity);
-        }
+       System.out.println(playerCharacter.getLocation());
     }
 
     @Override
