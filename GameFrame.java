@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame implements KeyListener
  {
     ImageIcon image1;
-
+    Jp jp;
     TextThingy txtPnl;
     Player playerCharacter;
     int playerVelocity;
@@ -27,6 +27,8 @@ public class GameFrame extends JFrame implements KeyListener
         this.add(playerCharacter);
         this.addKeyListener(this);
         txtPnl = new TextThingy();
+        jp = new Jp();
+        this.add(jp);
         
         
         
@@ -49,7 +51,7 @@ public class GameFrame extends JFrame implements KeyListener
             playerCharacter.setLocation(playerCharacter.getX(), playerCharacter.getY()+playerVelocity);
         }
 
-       System.out.println(playerCharacter.getLocation());
+       
     }
 
     @Override
