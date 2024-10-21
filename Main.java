@@ -1,38 +1,60 @@
 
-import java.awt.Color;
-import javax.swing.JOptionPane;
+import java.awt.GridLayout;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 
-public class Main {
-    static String username;
-    static boolean gameStarted = false;
-    static Color playerColor;
-    static String jop2;
+
+
+
+public class Main  {
+     static JFrame jf;
+    static MyPanel mp;
+     
+     
+     static JTextField jtf;
     public static void main (String[]args){
+        //JFRAME
+        jf = new JFrame();
+        jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+        jf.setVisible(true);
+        jf.setLayout(new GridLayout());
+        jf.setResizable(false);
+        
+        jf.setBounds(100, 100, 1000, 1000);
+        //JLABEL
+       
+       
+        
+        
 
-        int jop;
-        while (!(gameStarted)){
-            username = JOptionPane.showInputDialog("Insert a username");
+        //JPANEL
+        mp = new MyPanel();
 
-            jop2 = JOptionPane.showInputDialog("Character Color?");
-            
-                
-            jop =JOptionPane.showConfirmDialog(null, "Would you like to start?");
-            switch  (jop){
-                case 0: gameStarted=true;
-                break;
-                case 1:gameStarted = false;
-                break;
-                case 2:gameStarted = false;
-                break;
 
-            }
+        
 
-        }
+        jtf = new JTextField();
+        jtf.setVisible(true);
+        jtf.setColumns(15);
+    jf.add(mp);
+    
+    mp.add(mp.jl);
+    mp.add(jtf);
+    mp.add(mp.jb);
+
+     mp.updateUI();
+     jf.pack();   
          
-        GameFrame gameFrame = new GameFrame();
+
+         
+       
+        
        
     }
+
     
     }
+    
+    
     
